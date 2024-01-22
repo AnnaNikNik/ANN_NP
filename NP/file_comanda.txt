@@ -1,0 +1,30 @@
+Команды для Django shell
+
+User.objects.create(name="Имя пользователя") - Создать пользователя.
+
+Создать объект модели Автор связанный с пользователем:
+1)Создаем переменную с пользователем:
+u1=User.objects.get(pk=Айди пользователя)
+2)Затем создаем связть с автором:
+auth1=Author.objects.create(user=u1)
+
+Добавить категорию:
+Category.objects.create(name_category="Название категории")
+ 
+Добавить статью или новость:
+Post.objects.create(format_post=news/article, author=Указать автора)
+
+Присвоить категорию новости/статьи:
+1)f=Category.objects.get(d=Категория)
+2)f2=Post.objects.create(category=f)
+
+Comment.objects.create(text_comm='Текст', post= ,user= ) - создать комментарий
+
+post.like_post()  - лайкнуть пост
+post.dislike_post()  - дизлайкнуть пост
+post.like_comm() - лайкнуть комментарйи
+post.dislike_comm() - дизлайкнуть комментарий
+
+Author.update_rating() - обновить рейтинг пользователей
+Author.objects.aggregate(Max('rating_author')) - вывести рейтинг лучшего пользователя
+Comment.objects.all().text_comm - вывести все комментарии
